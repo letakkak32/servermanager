@@ -1,4 +1,6 @@
 name: servermanager
-version: '${project.version}'
+version: 1.0
 main: com.github.letakkak32.servermanager.Main
 api-version: 1.19
+commands:
+  now:
