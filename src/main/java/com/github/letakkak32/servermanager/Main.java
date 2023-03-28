@@ -11,4 +11,10 @@ public class Main extends JavaPlugin
     {
         Bukkit.getConsoleSender().sendMessage( ChatColor.AQUA + "플러그인이 활성화되었습니다.ㅋ");
     }
+
+    @Override
+    public void onDisable()
+    {
+        Bukkit.getConsoleSender().sendMessage( ChatColor.RED + "플러그인이 비활성화되었습니다.ㅠ");
+    }
 }
