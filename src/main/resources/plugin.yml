@@ -1,0 +1,4 @@
+name: Servermanager
+main: com.github.letakkak32.servermanager.Main
+api-version: 1.19
+version: testing_1.0
