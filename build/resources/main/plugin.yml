@@ -1,4 +1,8 @@
 name: Servermanager
 main: com.github.letakkak32.servermanager.Main
 api-version: 1.19
-version: testing_1.0
+version: testing_20230329_1
+commands:
+  testing:
+    description: letakkak32's testing command!
+    usage: /testing
