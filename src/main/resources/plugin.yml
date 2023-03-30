@@ -6,3 +6,7 @@ commands:
   testing:
     description: letakkak32's testing command!
     usage: /testing
+  gm:
+    permission: servermanager.command.gamemode
+  gamemode:
+    permission: servermanager.command.gamemode
