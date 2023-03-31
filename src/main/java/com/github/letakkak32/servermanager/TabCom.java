@@ -12,32 +12,29 @@ import java.util.List;
 
 public class TabCom implements TabCompleter {
 
-    List<String> arguments = new ArrayList<String>();
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        switch(command.getName())
-        {
+        switch(command.getName()) {
             case "gm", "gamemode" -> {
-                if(args.length == 1)
-                {
-                    arguments.add("0");
-                    arguments.add("1");
-                    arguments.add("2");
-                    arguments.add("3");
-                } else if (args.length >= 3) {
+                if(args.length == 1) {
+                    List<String> returns1 = new ArrayList<>();
+                    returns1.add("0");
+                    returns1.add("1");
+                    returns1.add("2");
+                    returns1.add("3");
+                    List<String> returns2 = new ArrayList<>();
+                    for(String returns : returns1) {
+                        if(returns.toLowerCase().startsWith(args[0].toLowerCase())) {
+                            returns2.add(returns);
+                        }
+                    }
+                    return returns2;
+                }
+                else {
                     return Arrays.asList("");
                 }
             }
         }
-        List<String> result = new ArrayList<String>();
-        if(args.length == 1) {
-            for(String a : arguments) {
-                if(a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                    result.add(a);
-                }
-            }
-            return result;
-        }
-        return arguments;
+        return null;
     }
 }

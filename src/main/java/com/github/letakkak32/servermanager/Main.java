@@ -27,8 +27,8 @@ public class Main extends JavaPlugin implements CommandExecutor {
         switch (label) {
             case "testing" -> sender.sendMessage("command testing complete! zzz");
             case "gm", "gamemode" -> {
+                Player player = (Player) sender;
                 if (args.length == 1) { //세부 명령의 길이가 1 일때
-                    Player player = (Player) sender;
                     switch (args[0]) {
                         case "0", "survival" -> {
                             player.setGameMode(GameMode.SURVIVAL);
@@ -48,6 +48,9 @@ public class Main extends JavaPlugin implements CommandExecutor {
                         }
                         default -> player.sendMessage(ChatColor.RED + "잘못된 명령어입니다!");
                     }
+                }
+                else {
+                    player.sendMessage(ChatColor.RED + "잘못된 명령어입니다!");
                 }
             }
         }
